@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "vercel-dev": "vercel dev --listen 3000",
-    "start": "node index.js"
+    "start": "node src/index.js"
   },
   "dependencies": {
     "cors": "^2.8.6",
