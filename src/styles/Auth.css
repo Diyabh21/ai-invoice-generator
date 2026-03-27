@@ -1,0 +1,165 @@
+/* ─── AUTH SCREEN ─── */
+.auth-screen {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+.auth-screen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 80% 60% at 50% 0%,
+    #2a2010 0%,
+    transparent 70%
+  );
+}
+.auth-screen::after {
+  content: "INVOICE";
+  position: absolute;
+  font-family: "Playfair Display", serif;
+  font-size: 18vw;
+  font-weight: 700;
+  color: rgba(201, 168, 76, 0.04);
+  letter-spacing: -0.05em;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  pointer-events: none;
+  user-select: none;
+}
+
+.auth-card {
+  position: relative;
+  z-index: 1;
+  background: #161410;
+  border: 1px solid #2e2a22;
+  border-radius: 8px;
+  padding: 2.5rem;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.6);
+}
+.auth-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--gold), var(--rust), var(--gold));
+  border-radius: 8px 8px 0 0;
+}
+
+.auth-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: var(--gold);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.2rem;
+}
+.auth-tagline {
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.auth-tabs {
+  display: flex;
+  gap: 0;
+  background: #0f0e0c;
+  border-radius: 6px;
+  padding: 3px;
+  margin-bottom: 1.75rem;
+  border: 1px solid #2e2a22;
+}
+.auth-tab {
+  flex: 1;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+.auth-tab.active {
+  background: #2a2620;
+  color: var(--gold);
+}
+
+.auth-field {
+  margin-bottom: 1rem;
+}
+.auth-field label {
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+.auth-field input {
+  width: 100%;
+  background: #0f0e0c;
+  border: 1px solid #2e2a22;
+  color: var(--paper);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.9rem;
+  padding: 0.7rem 0.9rem;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.auth-field input:focus {
+  border-color: var(--gold);
+}
+
+.auth-submit {
+  width: 100%;
+  margin-top: 1.5rem;
+  background: linear-gradient(135deg, var(--gold), #a8852a);
+  border: none;
+  color: var(--ink);
+  font-family: "DM Mono", monospace;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.85rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+.auth-submit:hover {
+  opacity: 0.88;
+}
+.auth-submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.auth-error {
+  background: #2a1410;
+  border: 1px solid var(--rust);
+  color: var(--rust);
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 4px;
+  margin-top: 0.75rem;
+  letter-spacing: 0.05em;
+}

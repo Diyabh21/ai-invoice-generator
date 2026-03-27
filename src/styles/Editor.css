@@ -1,0 +1,256 @@
+/* ─── EDITOR / PREVIEW LAYOUT ─── */
+.app {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 0px);
+  gap: 0;
+}
+
+.editor {
+  background: var(--ink);
+  padding: 2.5rem;
+  overflow-y: auto;
+  max-height: 100vh;
+  position: sticky;
+  top: 0;
+}
+
+.editor-header {
+  margin-bottom: 2rem;
+}
+.editor-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.6rem;
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  margin-bottom: 0.25rem;
+}
+.editor-sub {
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.section {
+  margin-bottom: 1.75rem;
+}
+.section-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--gold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.section-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #2a2620;
+}
+
+.input-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.input-full {
+  margin-bottom: 0.75rem;
+}
+
+label {
+  display: block;
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.3rem;
+}
+label .req {
+  color: var(--rust);
+  margin-left: 2px;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  background: #1a1812;
+  border: 1px solid #2e2a22;
+  color: var(--paper);
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.85rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 4px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--gold);
+}
+textarea {
+  resize: vertical;
+  min-height: 60px;
+}
+
+/* ─── LINE ITEMS ─── */
+.line-item {
+  background: #1a1812;
+  border: 1px solid #2e2a22;
+  border-radius: 6px;
+  padding: 0.9rem;
+  margin-bottom: 0.6rem;
+  position: relative;
+  transition: border-color 0.2s;
+}
+.line-item:hover {
+  border-color: #3e3830;
+}
+.line-item-top {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.line-item-nums {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.btn-remove {
+  background: #2a1410;
+  border: 1px solid #4a2018;
+  color: var(--rust);
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 4px;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-family: "DM Mono", monospace;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.btn-remove:hover {
+  background: var(--rust);
+  color: #fff;
+  border-color: var(--rust);
+}
+
+.currency-input-wrap {
+  position: relative;
+}
+.currency-input-wrap .currency-symbol {
+  position: absolute;
+  left: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--gold);
+  pointer-events: none;
+  user-select: none;
+}
+.currency-input-wrap input {
+  padding-left: 1.75rem;
+}
+
+.btn-add {
+  width: 100%;
+  background: none;
+  border: 1px dashed #3e3830;
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.7rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 0.5rem;
+}
+.btn-add:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
+/* ─── AI CONTROLS ─── */
+.btn-ai {
+  width: 100%;
+  background: linear-gradient(135deg, #2a2010, #1a1208);
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.8rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-ai:hover {
+  background: linear-gradient(135deg, #3a3015, #2a2010);
+}
+.btn-ai:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.ai-prompt-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.6rem;
+}
+.ai-prompt-row input {
+  flex: 1;
+}
+
+.ai-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: #1a1208;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 20px;
+  margin-bottom: 0.75rem;
+}
+
+/* ─── BACK BUTTON ─── */
+.btn-back {
+  background: none;
+  border: 1px solid #2e2a22;
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.75rem;
+  border-radius: 4px;
+  cursor: pointer;
+}

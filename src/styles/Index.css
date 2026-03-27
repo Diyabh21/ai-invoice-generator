@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap");
+
+/* ─── RESET & ROOT ─── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --ink: #0f0e0c;
+  --paper: #f5f0e8;
+  --cream: #ede7d5;
+  --gold: #c9a84c;
+  --gold-light: #e8d49a;
+  --rust: #b85c3a;
+  --muted: #7a7060;
+  --border: #d4c9b0;
+  --white: #ffffff;
+  --green: #4a8c5c;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  background: var(--paper);
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* ─── SHARED UTILITIES ─── */
+.spin {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.save-toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 999;
+  background: var(--ink);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  animation:
+    slideUp 0.3s ease,
+    fadeOut 0.3s ease 2s forwards;
+}
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+/* ─── MEDIA ─── */
+@media print {
+  .sidebar,
+  .editor,
+  .preview-actions {
+    display: none !important;
+  }
+  .shell {
+    display: block;
+  }
+  .app {
+    grid-template-columns: 1fr;
+  }
+  .preview {
+    padding: 0;
+    max-height: none;
+  }
+  .invoice {
+    box-shadow: none;
+  }
+}
+@media (max-width: 900px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+  .editor {
+    max-height: none;
+    position: relative;
+  }
+  .preview {
+    max-height: none;
+  }
+  .stats-row {
+    grid-template-columns: 1fr;
+  }
+}

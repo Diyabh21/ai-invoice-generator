@@ -9,7 +9,7 @@ const app = express();
 
 app.use(
   cors({
-    origin: "*", // you can restrict later to Netlify URL
+    origin: "*",
   }),
 );
 

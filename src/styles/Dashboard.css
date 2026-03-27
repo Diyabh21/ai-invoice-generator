@@ -1,0 +1,222 @@
+/* ─── DASHBOARD ─── */
+.dashboard {
+  padding: 2.5rem;
+}
+.dash-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2rem;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+.dash-sub {
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  color: var(--muted);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+.stat-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+.stat-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+.stat-val {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: var(--ink);
+  font-weight: 600;
+  line-height: 1;
+}
+.stat-sub {
+  font-family: "DM Mono", monospace;
+  font-size: 0.62rem;
+  color: var(--muted);
+  margin-top: 0.3rem;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+}
+.btn-new {
+  background: var(--ink);
+  color: var(--gold);
+  border: none;
+  font-family: "DM Mono", monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.55rem 1.1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-new:hover {
+  background: #2a2620;
+}
+
+/* ─── INVOICE TABLE ─── */
+.invoice-table-wrap {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.inv-list-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.inv-list-table th {
+  background: #faf7f0;
+  font-family: "DM Mono", monospace;
+  font-size: 0.58rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.75rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+  font-weight: 400;
+}
+.inv-list-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f5f0e8;
+  font-size: 0.85rem;
+  vertical-align: middle;
+}
+.inv-list-table tr:last-child td {
+  border-bottom: none;
+}
+.inv-list-table tr:hover td {
+  background: #fefcf8;
+}
+
+.inv-num-cell {
+  font-family: "DM Mono", monospace;
+  font-size: 0.78rem;
+  color: var(--gold);
+  font-weight: 500;
+}
+.inv-client {
+  font-weight: 500;
+  color: var(--ink);
+}
+.inv-date-cell {
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.inv-amount-cell {
+  font-family: "DM Mono", monospace;
+  font-size: 0.88rem;
+  font-weight: 500;
+}
+
+.badge {
+  display: inline-block;
+  font-family: "DM Mono", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.55rem;
+  border-radius: 20px;
+}
+.badge-paid {
+  background: #e8f4ec;
+  color: var(--green);
+  border: 1px solid #b8ddc4;
+}
+.badge-pending {
+  background: #fdf4e3;
+  color: #9a6f2a;
+  border: 1px solid #e8d49a;
+}
+.badge-draft {
+  background: #f5f0e8;
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+
+.inv-actions {
+  display: flex;
+  gap: 0.4rem;
+}
+.btn-sm {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-family: "DM Mono", monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.6rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.btn-sm:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.btn-sm.danger:hover {
+  border-color: var(--rust);
+  color: var(--rust);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--muted);
+}
+.empty-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  opacity: 0.4;
+}
+.empty-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 0.4rem;
+}
+.empty-sub {
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+}

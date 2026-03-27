@@ -1,0 +1,355 @@
+.preview {
+  background: var(--paper);
+  padding: 3rem 2.5rem;
+  overflow-y: auto;
+  max-height: 100vh;
+  position: relative;
+}
+.invoice {
+  background: var(--white);
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 3.5rem;
+  box-shadow:
+    0 4px 40px rgba(0, 0, 0, 0.1),
+    0 1px 8px rgba(0, 0, 0, 0.06);
+  position: relative;
+  min-height: 900px;
+}
+.invoice::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--rust), var(--gold));
+}
+
+.inv-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+.inv-logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+.inv-logo-sub {
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 0.2rem;
+}
+.inv-title-block {
+  text-align: right;
+}
+.inv-word {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.inv-number {
+  font-family: "DM Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--gold);
+  letter-spacing: 0.1em;
+  margin-top: 0.4rem;
+}
+
+.inv-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.inv-meta-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.inv-name {
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.inv-address {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.inv-date-row {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.inv-date-key {
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.inv-date-val {
+  font-family: "DM Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--ink);
+}
+
+.inv-tax-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+}
+.inv-tax-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: #faf7f0;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  padding: 0.2rem 0.5rem;
+  font-family: "DM Mono", monospace;
+  font-size: 0.68rem;
+  color: var(--ink);
+  letter-spacing: 0.05em;
+}
+.inv-tax-badge span {
+  color: var(--muted);
+  font-size: 0.55rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  background: var(--border);
+  padding: 0.1rem 0.3rem;
+  border-radius: 2px;
+}
+
+/* ─── BANK DETAILS ─── */
+.inv-bank {
+  margin-top: 2rem;
+  padding: 1.25rem 1.5rem;
+  background: #faf7f0;
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 4px;
+}
+.inv-bank-title {
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+}
+.inv-bank-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem 2rem;
+}
+.inv-bank-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+.inv-bank-key {
+  font-family: "DM Mono", monospace;
+  font-size: 0.56rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.inv-bank-val {
+  font-family: "DM Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.inv-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+.inv-table th {
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  padding: 0 0 0.7rem;
+  border-bottom: 1px solid var(--border);
+  font-weight: 400;
+}
+.inv-table th:last-child,
+.inv-table td:last-child {
+  text-align: right;
+}
+.inv-table th:nth-child(2),
+.inv-table td:nth-child(2) {
+  text-align: center;
+}
+.inv-table th:nth-child(3),
+.inv-table td:nth-child(3) {
+  text-align: center;
+}
+.inv-table td {
+  padding: 0.9rem 0 0.9rem;
+  border-bottom: 1px solid #f0ebe0;
+  font-size: 0.875rem;
+  vertical-align: top;
+}
+.inv-table tr:last-child td {
+  border-bottom: none;
+}
+.td-desc {
+  color: var(--ink);
+}
+.td-desc-sub {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin-top: 0.15rem;
+}
+.td-mono {
+  font-family: "DM Mono", monospace;
+  font-size: 0.8rem;
+  color: var(--muted);
+  text-align: center;
+}
+.td-amount {
+  font-family: "DM Mono", monospace;
+  font-size: 0.85rem;
+  text-align: right;
+}
+
+/* ─── TOTALS ─── */
+.inv-totals {
+  margin-left: auto;
+  width: 260px;
+}
+.totals-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.45rem 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #f0ebe0;
+}
+.totals-row:last-child {
+  border-bottom: none;
+}
+.totals-key {
+  color: var(--muted);
+}
+.totals-val {
+  font-family: "DM Mono", monospace;
+}
+.totals-grand {
+  background: var(--ink);
+  margin: 0.75rem -0.75rem -0.5rem;
+  padding: 0.85rem 0.75rem;
+  border-radius: 4px;
+}
+.totals-grand .totals-key {
+  color: var(--paper);
+  font-family: "DM Mono", monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.totals-grand .totals-val {
+  color: var(--gold);
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* ─── NOTES & FOOTER ─── */
+.inv-notes {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+}
+.inv-notes-label {
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  color: var(--muted);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+.inv-notes-text {
+  font-size: 0.8rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+.inv-footer {
+  position: absolute;
+  bottom: 2rem;
+  left: 3.5rem;
+  right: 3.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-family: "DM Mono", monospace;
+  font-size: 0.6rem;
+  color: #c8bfa8;
+  letter-spacing: 0.08em;
+}
+
+/* ─── PREVIEW ACTIONS ─── */
+.preview-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+.btn-print {
+  background: var(--ink);
+  color: var(--gold);
+  border: none;
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-print:hover {
+  background: #2a2620;
+}
+.btn-save-inv {
+  background: none;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  font-family: "DM Mono", monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-save-inv:hover {
+  background: #2a2010;
+}
