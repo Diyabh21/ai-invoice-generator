@@ -1,4 +1,4 @@
-import { fmt } from "../utils/Helpers";
+import { fmt } from "../utils/helpers";
 
 export default function InvoicePreview({
   from,
